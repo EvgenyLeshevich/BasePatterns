@@ -1,5 +1,8 @@
 package example;
 
+import example.adapter.PersonAdapter;
+import example.adapter.PersonAdapterImpl;
+import example.facadeperson.Workflow;
 import example.personfactory.Person;
 import example.personfactory.PersonFactory;
 
@@ -20,5 +23,15 @@ public class Main {
         manager.openingDoor(true);
         manager.statDoor();
 
+        PersonAdapter teacherAdapter = new PersonAdapterImpl(teacher);
+        System.out.println(teacher.getSalary() + "BYN = " + teacherAdapter.getSalary() + "$");
+        PersonAdapter managerAdapter = new PersonAdapterImpl(manager);
+        System.out.println(manager.getSalary() + "BYN = " + managerAdapter.getSalary() + "$");
+        PersonAdapter studentAdapter = new PersonAdapterImpl(student);
+        System.out.println(student.getSalary() + "BYN = " + studentAdapter.getSalary() + "$");
+
+        Workflow workflow = new Workflow();
+        workflow.doWork();
+        workflow.dontDoWork();
     }
 }

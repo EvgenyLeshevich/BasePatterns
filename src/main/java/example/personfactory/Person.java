@@ -1,8 +1,10 @@
 package example.personfactory;
 
 import example.Door;
+import example.facadeperson.Job;
+import example.facadeperson.WorkingTime;
 
-public abstract class Person {
+public abstract class Person implements Job {
     private static Door door;
 
     public Person(Door door) {
@@ -19,5 +21,19 @@ public abstract class Person {
 
     public void statDoor() {
         door.statusDoor();
+    }
+
+    // Adapter
+
+    public abstract double getSalary();
+
+    // Facade
+
+    public void doJobBeforeDeadline(WorkingTime workingTime){
+        if(workingTime.isActiveWorkingTime()){
+            doJob();
+        } else {
+            dontDoJob();
+        }
     }
 }

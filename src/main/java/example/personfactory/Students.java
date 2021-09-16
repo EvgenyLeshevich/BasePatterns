@@ -18,4 +18,19 @@ public class Students extends Person {
         System.out.println("Student opening door...");
         super.openingDoor(status);
     }
+
+    @Override
+    public double getSalary() {
+        return 0;
+    }
+
+    @Override
+    public void doJob() {
+        System.out.println("Students write code");
+    }
+
+    @Override
+    public void dontDoJob() {
+        System.out.println("Students don't write code");
+    }
 }

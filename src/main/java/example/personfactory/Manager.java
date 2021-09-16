@@ -23,4 +23,19 @@ public class Manager extends Person {
     public void statDoor() {
         super.statDoor();
     }
+
+    @Override
+    public double getSalary() {
+        return 1000;
+    }
+
+    @Override
+    public void doJob() {
+        System.out.println("Manager searching students");
+    }
+
+    @Override
+    public void dontDoJob() {
+        System.out.println("Manager don't search students");
+    }
 }

@@ -18,4 +18,19 @@ public class Teacher extends Person {
         System.out.println("Teacher opening door...");
         super.openingDoor(status);
     }
+
+    @Override
+    public double getSalary() {
+        return 2000;
+    }
+
+    @Override
+    public void doJob() {
+        System.out.println("The teacher teaches students to write code");
+    }
+
+    @Override
+    public void dontDoJob() {
+        System.out.println("The teacher don't teaches students to write code");
+    }
 }
